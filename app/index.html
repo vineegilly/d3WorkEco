@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="webkid react starterkit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>EcoSystem</title>
+
+
+    <!-- bower:css -->
+
+    <!-- endbower -->
+
+    <!-- Theme Css  Manually Included-->
+    <link rel="stylesheet" href="assets/main.css"/>
+    <!-- End of Theme Css -->
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+
+    <!-- end of bower.js-->
+
+    <script src="vendor/assert.js"></script>
+
+    <script>
+        window.phet = {};
+        phet.chipper = {};
+        phet.chipper.getCacheBusterArgs = function () {
+            return [];
+        };
+
+      //  window.assertions.enableAssert();
+    </script>
+
+    <!-- vendor js -->
+
+    <script src="vendor/scenery.js"></script>
+    <script src="vendor/axonbuild.js"></script>
+    <script src="vendor/hammer.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <!-- end of vendor js -->
+
+</head>
+<body>
+<!--
+<div>
+    <img src="http://placehold.it/350x150">
+</div>
+
+<div style="position: relative">
+    <div>
+        <img src="http://placehold.it/350x150">
+    </div>
+    <div>
+        <img src="http://placehold.it/350x150">
+    </div>
+</div> -->
+
+<!--
+<div id="main-scene" style="position: absolute;top:100px;left:75px;">
+</div> -->
+
+
+<button onclick="EcoSystemLauncher.launchUsingData(organisms,'main-scene')">Launch Simulation
+</button>
+
+
+<button onclick="getReplayData()">Get Replay Data
+</button>
+
+
+<button onclick="review()">Review</button>
+
+<button id="sClear" onclick="clearSimulation()">Clear</button>
+<button id="magnificOn" onclick="resizeParts(scaleFactor)">ZoomOn</button>
+<button id="magnificOff" onclick="resetResizeParts()">ZoomOff</button>
+<div id="main-scene" style="position:relative;">
+</div>
+
+
+<!-- App -->
+<script src="js/main.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+  // $('#sClear').on("click touchstart", function() {
+  //     alert(3);
+  //   clearSimulation();
+  // });
+//   var hammertime = new Hammer(main-scene);
+// hammertime.on('tap', function(ev) {
+// 	console.log("ev");
+//    clearSimulation();
+// });
+
+});
+  var testArray = [{
+    "hawk":"Hawk"
+  },
+{
+  "earthworm":"EarthWorm"
+},{
+  "coyote":"Coyote"
+},{
+  "mouse":"Mouse"
+},{
+  "grass":"Grass"
+},{
+  "mushroom":"Mushroom"
+},{
+  "frog":"Frog"
+},{
+  "butterfly":"Butterfly"
+},{
+  "deer":"Deer"
+},
+];
+var scaleFactor = {scale:1.2, tx:0, ty:0};
+    var organisms = [{
+      "name": "hawk"
+    },
+    {
+      "name": "earthworm"
+    },
+    {
+      "name": "coyote"
+    },
+    {
+      "name": "mouse"
+    },
+    {
+      "name": "grass"
+    },
+    {
+      "name": "mushroom"
+    },
+    {
+      "name": "frog"
+    },
+    {
+      "name": "butterfly"
+    },
+    {
+      "name":"flower"
+    },
+    {
+      "name": "deer"
+    }
+  ,
+  {
+    "newNameObj":[{"key":"hawk","value":"Hawk"},
+                  {"key":"earthworm","value":"EarthWorm"},
+                {"key":"coyote","value":"Coyote"},
+              {"key":"mouse","value":"Mouse"},
+            {"key":"grass","value":"Grass"},
+          {"key":"mushroom","value":"Mushroom"},
+        {"key":"frog","value":"Frog"},
+      {"key":"butterfly","value":"ButterFly"},
+    {"key":"deer","value":"Deer"},]
+  }
+];
+
+
+    var replayData = {};
+
+    function getReplayData() {
+        replayData = EcoSystemLauncher.getReplayData();
+    }
+
+    function review() {
+        EcoSystemLauncher.replay(replayData);
+    }
+
+    function clearSimulation() {
+        EcoSystemLauncher.clear();
+    }
+   function resizeParts(options) {
+        EcoSystemLauncher.resizeParts(options);
+    }
+    function resetResizeParts(){
+      EcoSystemLauncher.resetResizeParts();
+    }
+
+</script>
+
+
+</body>
+</html>

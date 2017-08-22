@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="webkid react starterkit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>EcoSystem</title>
+
+
+</head>
+<body>
+<script src="vendor/jquery.min.js"></script>
+<script src="vendor/lodash.min.js"></script>
+
+<script>
+
+    var organisms = [{
+      "name": "hawk"
+    },
+    {
+      "name": "beetle"
+    },
+    {
+      "name": "coyote"
+    },
+    {
+      "name": "mouse"
+    },
+    {
+      "name": "grass"
+    },
+    {
+      "name": "mushroom"
+    },
+    {
+      "name": "frog"
+    },
+    {
+      "name": "butterfly"
+    },
+    {
+      "name": "deer"
+    }];
+
+    function launchSim() {
+
+        $('#simulationFrame').get(0).contentWindow.launchSim(organisms);
+    }
+
+
+</script>
+
+<div>
+    <img src="http://placehold.it/350x150">
+</div>
+<div>
+
+    <iframe id="simulationFrame" src="./SimulationFrame.html" width="800" height="600" scrolling="no"
+            frameborder="no"></iframe>
+
+</div>
+<button onclick="launchSim()">Launch Simulation
+</button>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="webkid react starterkit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>EcoSystem</title>
+
+
+    <!-- bower:css -->
+
+    <!-- endbower -->
+
+    <!-- Theme Css  Manually Included-->
+    <link rel="stylesheet" href="assets/main.css"/>
+    <!-- End of Theme Css -->
+
+    <!-- bower:js -->
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/lodash.min.js"></script>
+
+    <!-- end of bower.js-->
+
+    <script src="vendor/assert.js"></script>
+    <script>
+        window.phet = {};
+        phet.chipper = {};
+        phet.chipper.getCacheBusterArgs = function () {
+            return [];
+        };
+
+        // debug   window.assertions.enableAssert();
+    </script>
+
+    <!-- vendor js -->
+
+    <script src="vendor/scenery.js"></script>
+    <script src="vendor/axonbuild.js"></script>
+
+    <!-- end of vendor js -->
+
+</head>
+<body>
+<div id="main-scene"></div>
+
+<!-- App -->
+<script src="js/main.js"></script>
+
+<script>
+
+
+    function launchSim(organismsInfo) {
+        EcoSystemLauncher.launchUsingData(organismsInfo, 'main-scene');
+    }
+
+
+</script>
+
+
+</body>
+</html>

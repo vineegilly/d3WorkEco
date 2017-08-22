@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+  
+function compare (a, b) {
+  y = a.split("").sort();
+  z = b.split("").sort();
+  areAnagrams = true;
+  for (i=0; i<y.length && areAnagrams; i++) {
+    console.log(i);
+    if(y.length===z.length) {
+      if (y[i]===z[i]){
+        // good for now
+        console.log('up to now it matches');
+      } else {
+        // a letter differs
+        console.log('a letter differs');
+        areAnagrams = false;
+      }
+    }
+    else {
+      console.log(a + " has a different amount of letters than " + b);
+      areAnagrams = false;
+    }
+
+  }
+  if (areAnagrams) {
+    console.log('They ARE anagrams');
+  } else {
+    console.log('They are NOT anagrams');
+  }
+    return areAnagrams;
+}
+
+compare("mary", "arms");
+  
+</script>
+</body>
+</html>>
